@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="card2 col-lg-4 col-md-5">
-                <div class="row px-3"> <input type="text" ng-model="name" name="location" placeholder="Another location" class="mb-5">
+                <div class="row px-3"> <input type="text" ng-model="name" name="location" id="in" placeholder="Another location" class="mb-5">
                     <div class="fa fa-search mb-5 mr-0 text-center" ng-click="show()"> </div>
                 </div>
                 <div class="mr-5">
@@ -77,6 +77,66 @@
                         <p class="ml-auto">{{record.clouds.all}}%</p>
                     </div>
                     <div class="line mt-3"></div>
+                                        <div class="mt-3" class="mx-auto"></div>
+                    <div class="page-content page-container" id="page-content">
+                        <div class="padding">
+                            <div class="row container d-flex justify-content-center">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@fat"><i class="fa fa-bell"></i> Get information on your phone</button>
+                                <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="ModalLabel" style="color: black;">Write your message here</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <grammarly-extension style="position: absolute; top: 0px; left: 0px; pointer-events: none;">
+                                                    <div data-grammarly-part="highlights" style="position: absolute; top: 0px; left: 0px;">
+                                                        <div style="box-sizing: content-box; top: 1px; left: 1px; width: 0px; height: 0px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                                                            <div style="position: absolute; top: 0px; left: 0px;">
+                                                                <div style="height: 815px; width: 1440px;"></div>
+                                                                <div style="position: absolute; top: 0px; left: 0px; height: 815px; width: 1440px;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-grammarly-part="button" style="position: absolute; top: 0px; left: 0px;">
+                                                        <div style="box-sizing: content-box; top: 1px; left: 1px; width: 0px; height: 0px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
+                                                            <div style="position: absolute; transform: translate(-100%, -100%); top: -14px; left: -22px; pointer-events: all;">
+                                                                <div style="display: flex; flex-direction: row;">
+                                                                    <div class="_3-ITD">
+                                                                        <div class="_5WizN aN9_b _1QzSN">
+                                                                            <div class="_3YmQx">
+                                                                                <div title="Protected by Grammarly" class="_3QdKe">&nbsp;</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </grammarly-extension>
+                                                <form name="form">
+                                                    <div class="form-group"> <label for="recipient-name" class="col-form-label" style="color: black;">State/City:</label> <input type="text" class="form-control" ng-disabled="true" value="{{record.name}}"> </div>
+                                                    <div class="form-group"> <label for="recipient-name" class="col-form-label" style="color: black;">Description:</label> <input type="text" class="form-control" ng-disabled="true" value="{{record.weather[0].description}}"> </div>
+                                                    <div class="form-group"> <label for="recipient-name" class="col-form-label" style="color: black;">Temperature:</label> <input type="text" class="form-control" ng-disabled="true" value="{{record.main.temp-273 | number : 0}}C"> </div>
+                                                    <div class="form-group"> <label for="recipient-name" class="col-form-label" style="color: black;">Wind:</label> <input type="text" class="form-control" ng-disabled="true" value="{{record.wind.speed}}m/s"> </div>
+                                                    <div class="form-group"> <label for="recipient-name" class="col-form-label" style="color: black;">Your phone number:</label> <input type="text" placeholder="+91" class="form-control" ng-pattern="/^[0-9]*$/" name="phone" ng-model="number" id="phone" required ng-minlength="10"> </div>
+                                                    <div ng-show="form.phone.$touched && form.phone.$error.minlength">
+                                                    <font color="red">10 numbers are mandate</font>
+                                                    </div>
+                                                    <div ng-show="form.phone.$touched && form.phone.$error.pattern">
+                                                        <font color="red">Only Numbers allowed</font>
+                                                    </div>
+
+                                                    <div class="form-group"> <label for="message-text" class="col-form-label">Message:</label> <textarea ng-model="typeHere" placeholder="Write your message here ..(optional)" class="form-control" id="message-text" spellcheck="false"></textarea> </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer"> <button type="button" class="btn btn-success" ng-click="message()" ng-disabled="form.phone.$invalid">Send message</button> <button type="button" class="btn btn-light" data-dismiss="modal">Close</button> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
