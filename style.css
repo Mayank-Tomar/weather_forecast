@@ -34,7 +34,7 @@ body {
     padding: 0px 0px 40px 40px
 }
 
-input {
+#in {
     background-color: #607D8B;
     padding: 24px 0px 12px 0px !important;
     width: 80%;
@@ -45,7 +45,7 @@ input {
     color: #fff !important
 }
 
-input:focus {
+#in:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -94,4 +94,12 @@ input:focus {
     .card1 {
         padding-left: 26px
     }
+}
+input.ng-touched.ng-invalid
+{
+    border-left: 8px red ridge;
+}
+input.ng-touched.ng-valid
+{
+    border-left: 8px green ridge;
 }
