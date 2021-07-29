@@ -103,3 +103,7 @@ input.ng-touched.ng-valid
 {
     border-left: 8px green ridge;
 }
+button
+{
+    margin-left:28px;
+}
