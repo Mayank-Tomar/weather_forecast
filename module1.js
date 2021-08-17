@@ -1,5 +1,6 @@
 var app=angular.module("myMod",[]);
-app.controller("myController",function($scope,$http,$window,$interval){
+app.controller("myController",function($scope,$http,$window,$interval)
+{
     
     $interval(function(){
      $scope.myDate=new Date();
