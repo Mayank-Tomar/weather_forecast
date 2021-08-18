@@ -96,10 +96,12 @@ body
         padding-left: 26px
     }
 }
+/*Angular forms css classes which will show red when textbox is touched and invalid.*/
 input.ng-touched.ng-invalid
 {
     border-left: 8px red ridge;
 }
+/*Angular forms css classes which will show green when textbox is touched and valid.*/
 input.ng-touched.ng-valid
 {
     border-left: 8px green ridge;
